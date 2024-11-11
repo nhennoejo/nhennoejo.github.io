@@ -83,6 +83,7 @@ code{
 blockquote {
   padding: 0.5rem;
   border-left:4px double #4b4b4b;
+  background-color: #f3f3f3;
   color: #333;
   font-style: italic;
 }
