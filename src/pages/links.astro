@@ -1,0 +1,91 @@
+---
+import LinkCard from "../components/LinkCard.astro";
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>またきま</title>
+    <style>
+      #container {
+        max-width: 600px;
+        margin: auto;
+      }
+      #profile {
+        width: 80%;
+        margin: 0 auto;
+      }
+      .icon {
+        width: 200px;
+        margin: 0 auto;
+      }
+      .icon > img {
+        border-radius: 50%;
+      }
+      footer{
+        margin: 80px auto 0 auto;
+        width: fit-content;
+      }
+      footer > small{
+        color: #616161;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="main">
+        <div id="profile">
+          <div class="icon">
+            <img src="images/links/my-icon.jpg" alt="My Icon" />
+          </div>
+          <h1>またきま</h1>
+          <p>プログラミング、ギター</p>
+        </div>
+        <div id="links-ontent">
+          <LinkCard
+            logo="images/links/bluesky-logo.png"
+            platformName="Bluesky"
+            link="https://bsky.app/profile/nhennoejo.bsky.social"
+            description="フォローしてね"
+            backgroundColor="#e3f2fd"
+          />
+          <LinkCard
+            logo="images/links/x-logo.png"
+            platformName="X"
+            link="https://x.com/nhennoejo"
+            description="暇な時に見てね"
+            backgroundColor="white"
+          />
+          <LinkCard
+            logo="images/links/github-logo.png"
+            platformName="GitHub"
+            link="https://github.com/nhennoejo"
+            description="メインで使ってるアカウントじゃないから草がねぇ"
+            backgroundColor="#f5f5f5"
+          />
+          <LinkCard
+            logo="images/links/lastfm-logo.png"
+            platformName="Last.fm"
+            link="https://www.last.fm/user/nhennoejo"
+            description="曲の趣味が近かったら仲良くなりましょう"
+            backgroundColor="#ffebee"
+          />
+          <LinkCard
+            logo="images/links/rym-logo.png"
+            platformName="Rate Your Music"
+            link="https://rateyourmusic.com/~nhennoejo"
+            description="　"
+            backgroundColor="#e8eaf6"
+          />
+        </div>
+      </div>
+    </div>
+    <footer>
+      <small>&copy; 2024 nhennoejo</small>
+    </footer>
+  </body>
+</html>
