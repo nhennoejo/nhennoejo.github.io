@@ -2,14 +2,6 @@
   --border-bottom-color: rgb(150, 150, 150);
 }
 
-@font-face {
-  font-family: '0xProto';
-  src: url('https://github.com/nhennoejo/nhennoejo.github.io/blob/3cd12d0494ceb4f9f29fd8b0a3d28517b4ad0e97/public/fonts/0xProto-Regular.otf') format("otf");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
 h1 {
   margin: 2rem 0;
   font-size: 2.5rem;
@@ -44,17 +36,19 @@ h6 {
 
 .note {
   padding: 1rem 2rem;
-  margin: 1.4rem 0 ;
+  margin: 1.4rem 0;
   border-radius: 10px;
 }
 
-.note.info{
+.note.info {
   background-color: #dff4cf;
 }
-.note.warn{
+
+.note.warn {
   background-color: #fff0b3;
 }
-.note.alert{
+
+.note.alert {
   background-color: #ffdbdb;
 }
 
@@ -74,10 +68,12 @@ pre code {
 }
 
 pre code span {
-  font-family: "0xProto";
-}
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;}
 
-code{
+code {
   padding: 0.3rem;
   border-radius: 5px;
   background-color: #dadada;
@@ -85,7 +81,7 @@ code{
 
 blockquote {
   padding: 0.5rem;
-  border-left:4px double #4b4b4b;
+  border-left: 4px double #4b4b4b;
   background-color: #f3f3f3;
   color: #333;
   font-style: italic;
