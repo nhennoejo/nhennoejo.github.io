@@ -7,7 +7,6 @@ import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
 
 const allPosts = await getCollection('blog');
-console.log(allPosts);
 
 const pageTitle = "記事一覧";
 ---

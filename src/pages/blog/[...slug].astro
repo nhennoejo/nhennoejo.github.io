@@ -12,7 +12,6 @@ export const getStaticPaths = async () => {
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
-console.log(entry);
 ---
 
 <!-- // [...slug].astroファイル内では各スキーマの値を{[プロップス].data.[キー]}で取得できる -->

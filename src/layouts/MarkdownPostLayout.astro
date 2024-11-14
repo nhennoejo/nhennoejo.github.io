@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
 import "../styles/markdown.css";
+import { Image } from "astro:assets";
 const { entry } = Astro.props;
 const data = entry.data;
 const formattedDate = entry.data.pubDate.toLocaleString("ja-JP", {
@@ -20,7 +21,7 @@ const formattedDate = entry.data.pubDate.toLocaleString("ja-JP", {
   }
   <p style="color: rgb(97, 97, 97);"><em>{data.description}</em></p>
   <p>著者: {data.author}</p>
-  <img src={data.thumbnail.url} width="300" alt={data.thumbnail.alt} />
+  <Image src={data.thumbnail.url} width="1080" alt={data.thumbnail.alt} />
   <ul class="tags">
     {
       data.tags.map((tag) => (
