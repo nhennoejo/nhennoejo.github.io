@@ -8,9 +8,7 @@ const blogCollection = defineCollection({
     description: z.string(),
     author: z.string(),
     thumbnail: z.object({
-      url: image().refine((img) => img.width >= 1080, {
-        message: "カバー画像は幅1080ピクセル以上でなければなりません！",
-      }),
+      url: image(),
       alt: z.string(),
     }),
     tags: z.array(z.string()),
