@@ -14,11 +14,37 @@ const pageTitle = "記事一覧";
 <BaseLayout pageTitle={pageTitle}>
 	<p>XやBlueskyでは足りないときに</p>
 
-	<ul>
-		{
-			allPosts.map((content) => (
-				<BlogPost url={content.slug} title={content.data.title} />
-			))
-		}
-	</ul>
+<ul class="posts-grid">
+  {
+    allPosts.map((content) => {
+      const { title, thumbnail, pubDate } = content.data;
+      return (
+        <BlogPost
+          url={content.slug}
+          title={title}
+          thumbnailSrc={thumbnail.url.src}
+          thumbnailAlt={thumbnail.alt || title}
+          date={pubDate}
+        />
+      );
+    })
+  }
+</ul>
+
+<style>
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .posts-grid {
+      grid-template-columns: 1fr;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
+</style>
 </BaseLayout>
