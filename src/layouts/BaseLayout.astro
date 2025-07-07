@@ -24,7 +24,8 @@ const { pageTitle } = Astro.props;
 	</head>
 	<body>
 		<Header />
-		<h1>{pageTitle !== "404" ? pageTitle : ""}</h1>
+		<h1>スクリューに身を委ねて</h1>
+		<h2>{pageTitle !== "404" ? pageTitle : ""}</h2>
 		<slot />
 		<Footer />
 		<script>
