@@ -17,11 +17,9 @@ const pageTitle = "タグインデックス";
 
   .tag {
     margin: 0.25em;
-    border: dotted 1px #a1a1a1;
     border-radius: .5em;
     padding: .5em 1em;
     font-size: 1.15em;
-    background-color: #F8FCFD;
   }
 
 </style>
@@ -31,7 +29,7 @@ const pageTitle = "タグインデックス";
     {
       tags.map((tag) => (
         <p class="tag">
-          <a href={`/tags/${tag}`}>{tag}</a>
+          <a href={`/tags/${tag}`}>#{tag}</a>
         </p>
       ))
     }
