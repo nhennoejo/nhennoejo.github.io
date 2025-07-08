@@ -5,6 +5,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
+import AllPosts from "../components/allPosts.astro";
 
 const pageTitle = "記事一覧";
 
@@ -17,7 +18,9 @@ const allPosts = (await getCollection('blog')).sort((a, b) => {
 <BaseLayout pageTitle={pageTitle}>
 	<p>XやBlueskyでは足りないときに</p>
 
-<ul class="posts-grid">
+  <AllPosts allPosts={allPosts} />
+
+<!-- <ul class="posts-grid">
   {
     allPosts.map((content) => {
       const { title, thumbnail, pubDate } = content.data;
@@ -32,22 +35,7 @@ const allPosts = (await getCollection('blog')).sort((a, b) => {
       );
     })
   }
-</ul>
+</ul> -->
 
-<style>
-  .posts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-  }
 
-  @media (max-width: 768px) {
-    .posts-grid {
-      grid-template-columns: 1fr;
-      max-width: 400px;
-      margin: 0 auto;
-    }
-  }
-</style>
 </BaseLayout>
