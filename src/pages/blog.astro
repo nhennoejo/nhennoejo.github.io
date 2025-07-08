@@ -6,9 +6,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import BlogPost from "../components/BlogPost.astro";
 import { getCollection } from "astro:content";
 
-const allPosts = await getCollection('blog');
-
 const pageTitle = "記事一覧";
+
+const allPosts = (await getCollection('blog')).sort((a, b) => {
+  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+});
+
 ---
 
 <BaseLayout pageTitle={pageTitle}>
